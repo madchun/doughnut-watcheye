@@ -30,6 +30,32 @@ config_path = os.environ.get("WATCHEYE_CONFIG", "config/config.yaml")
 cfg = load_config(config_path)
 init_db(cfg.database.url)
 
+# Auto-seed demo data if database is empty
+def _seed_if_empty():
+    """Load seed_data.sql into the database when no content exists."""
+    from watcheye.storage.database import get_engine
+    from sqlalchemy import text
+    engine = get_engine()
+    with engine.connect() as conn:
+        count = conn.execute(text("SELECT COUNT(*) FROM brands")).scalar()
+        if count == 0:
+            seed_file = Path(__file__).resolve().parents[3] / "seed_data.sql"
+            if not seed_file.exists():
+                # Try repo root relative to cwd
+                seed_file = Path("seed_data.sql")
+            if seed_file.exists():
+                sql = seed_file.read_text()
+                for stmt in sql.split(";\n"):
+                    stmt = stmt.strip()
+                    if stmt and not stmt.startswith(("BEGIN", "COMMIT", "CREATE TABLE", "--")):
+                        try:
+                            conn.execute(text(stmt))
+                        except Exception:
+                            pass
+                conn.commit()
+
+_seed_if_empty()
+
 st.set_page_config(page_title="Watcheye — Doughnut Content Monitor", layout="wide")
 st.title("🔍 Watcheye — Social Media Content Monitor")
 
