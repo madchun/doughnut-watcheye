@@ -1,0 +1,77 @@
+products:
+  - name: "Macaroon Classic"
+    type: "backpack"
+    capacity: "16L"
+    description: "Iconic everyday backpack with signature front pocket, waterproof nylon, 40+ colors. Doughnut's best-seller."
+    best_for: ["urban_lifestyle", "product_showcase", "campaign_seasonal"]
+    keywords: ["colorful", "casual", "everyday", "cute", "compact", "iconic"]
+
+  - name: "Macaroon Large"
+    type: "backpack"
+    capacity: "20L"
+    description: "Expanded version of the iconic Macaroon with more room for work and travel essentials."
+    best_for: ["travel_adventure", "urban_lifestyle"]
+    keywords: ["spacious", "travel", "work", "daily", "versatile"]
+
+  - name: "Macaroon Mini"
+    type: "backpack"
+    capacity: "7L"
+    description: "Compact mini backpack for light outings and minimal carry."
+    best_for: ["urban_lifestyle", "ugc_community"]
+    keywords: ["mini", "light", "cute", "weekend", "minimal"]
+
+  - name: "Macaroon Tiny"
+    type: "crossbody"
+    capacity: "1L"
+    description: "Tiny crossbody bag for phone, keys and essentials. Part of the Macaroon family."
+    best_for: ["urban_lifestyle", "ugc_community", "campaign_seasonal"]
+    keywords: ["crossbody", "tiny", "phone", "essentials", "accessory"]
+
+  - name: "Pyramid"
+    type: "backpack"
+    capacity: "13L"
+    description: "Sleek triangular-shaped backpack from the Nomad Collection, 600D REPREVE recycled polyester."
+    best_for: ["travel_adventure", "behind_the_scenes"]
+    keywords: ["eco", "recycled", "travel", "sleek", "nomad"]
+
+  - name: "Pyramid Tiny"
+    type: "backpack"
+    capacity: "5L"
+    description: "Compact version of Pyramid, 2-in-1 hanging toiletry bag and daypack."
+    best_for: ["travel_adventure", "product_showcase"]
+    keywords: ["compact", "travel", "toiletry", "versatile"]
+
+  - name: "Navigator Duffelpack"
+    type: "duffel"
+    capacity: "35L"
+    description: "Premium duffel-backpack hybrid from DN Black Series. Converts between duffel and backpack carry."
+    best_for: ["travel_adventure", "behind_the_scenes"]
+    keywords: ["duffel", "travel", "premium", "black", "convertible"]
+
+  - name: "Astir Large"
+    type: "backpack"
+    capacity: "28L"
+    description: "Large capacity backpack from DN Black Series. Sleek professional design."
+    best_for: ["travel_adventure", "urban_lifestyle"]
+    keywords: ["large", "professional", "black", "premium", "work"]
+
+  - name: "Denver"
+    type: "backpack"
+    capacity: "18L"
+    description: "Classic outdoor-inspired backpack with modern urban styling."
+    best_for: ["travel_adventure", "urban_lifestyle"]
+    keywords: ["outdoor", "classic", "urban", "adventure"]
+
+  - name: "Pathfinder"
+    type: "backpack"
+    capacity: "22L"
+    description: "Collaboration series (Doughnut x PRMTVO). Street-art inspired adventure backpack."
+    best_for: ["campaign_seasonal", "ugc_community"]
+    keywords: ["collab", "street", "art", "limited", "adventure"]
+
+  - name: "Plus One Mini"
+    type: "backpack"
+    capacity: "8L"
+    description: "Compact mini backpack from the Kaleido Series with pattern prints."
+    best_for: ["urban_lifestyle", "campaign_seasonal"]
+    keywords: ["mini", "pattern", "print", "fashion"]

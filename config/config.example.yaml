@@ -1,0 +1,151 @@
+matrix:
+  brands:
+    direct_competitors:
+      - name: Herschel
+        platforms:
+          instagram: haborherschel
+          facebook: HerschelSupply
+          xiaohongshu: ""
+          x_twitter: Herschel
+      - name: Fjällräven
+        platforms:
+          instagram: fjallravenofficial
+          facebook: fjallraven
+          xiaohongshu: ""
+          x_twitter: fjaborallraven
+      - name: Eastpak
+        platforms:
+          instagram: eastpak
+          facebook: Eastpak
+          xiaohongshu: ""
+          x_twitter: eastpak_blog
+      - name: Anello
+        platforms:
+          instagram: anaborello_official
+          facebook: anelloOfficial
+          xiaohongshu: ""
+          x_twitter: ""
+      - name: CabinZero
+        platforms:
+          instagram: cabinzero
+          facebook: CabinZeroBags
+          xiaohongshu: ""
+          x_twitter: CabinZero
+      - name: Millican
+        platforms:
+          instagram: homeofmillican
+          facebook: homeofmillican
+          xiaohongshu: ""
+          x_twitter: homeofmillican
+      - name: Bellroy
+        platforms:
+          instagram: bellroy
+          facebook: Bellroy
+          xiaohongshu: ""
+          x_twitter: bellroy
+
+    lifestyle_brands:
+      - name: The North Face
+        platforms:
+          instagram: thenorthface
+          facebook: thenorthface
+          xiaohongshu: ""
+          x_twitter: TheNorthFace
+      - name: Patagonia
+        platforms:
+          instagram: patagonia
+          facebook: PATAGONIA
+          xiaohongshu: ""
+          x_twitter: patagonia
+      - name: Columbia
+        platforms:
+          instagram: columbia1938
+          facebook: Columbia
+          xiaohongshu: ""
+          x_twitter: Columbia1938
+      - name: "Arc'teryx"
+        platforms:
+          instagram: arcteryx
+          facebook: arcteryx
+          xiaohongshu: ""
+          x_twitter: arcteryx
+
+    fashion_bag_brands:
+      - name: Rains
+        platforms:
+          instagram: raborains
+          facebook: Rains
+          xiaohongshu: ""
+          x_twitter: rains_com
+      - name: Sandqvist
+        platforms:
+          instagram: sandqvist
+          facebook: Sandqvist
+          xiaohongshu: ""
+          x_twitter: sandqvist
+      - name: "Côte&Ciel"
+        platforms:
+          instagram: coteetciel
+          facebook: coteetciel
+          xiaohongshu: ""
+          x_twitter: coteetciel
+      - name: FREITAG
+        platforms:
+          instagram: fraboreitag
+          facebook: FREITAG
+          xiaohongshu: ""
+          x_twitter: FREITAG_lab
+
+  themes:
+    - name: product_showcase
+      keywords: ["product", "new arrival", "collection", "launch", "design", "detail"]
+    - name: travel_adventure
+      keywords: ["travel", "adventure", "explore", "journey", "trip", "outdoor"]
+    - name: urban_lifestyle
+      keywords: ["city", "commute", "daily", "street", "work", "everyday"]
+    - name: ugc_community
+      keywords: ["repost", "unboxing", "review", "community", "fan", "tagged"]
+    - name: campaign_seasonal
+      keywords: ["collab", "limited", "holiday", "seasonal", "sale", "campaign"]
+    - name: behind_the_scenes
+      keywords: ["making of", "design", "story", "process", "craft", "studio"]
+
+platforms:
+  instagram:
+    apify_actor: "apify/instagram-scraper"
+    max_posts_per_account: 50
+  facebook:
+    apify_actor: "apify/facebook-posts-scraper"
+    max_posts_per_account: 50
+  xiaohongshu:
+    apify_actor: "epctex/xiaohongshu-scraper"
+    max_posts_per_account: 30
+  x_twitter:
+    apify_actor: "apidojo/twitter-scraper-v2"
+    max_posts_per_account: 50
+  reddit:
+    apify_actor: "trudax/reddit-scraper"
+    max_posts_per_account: 30
+
+scoring:
+  weights:
+    likes: 1.0
+    comments: 3.0
+    shares: 5.0
+    saves: 4.0
+  min_score_threshold: 0.5
+  velocity_bonus_hours: 24
+  velocity_bonus_multiplier: 1.5
+
+# SQLite for local development (no server needed):
+database:
+  url: "sqlite:///./watcheye.db"
+# For PostgreSQL, use:
+#   url: "postgresql://localhost:5432/watcheye"
+
+media:
+  download: true
+  storage_path: "./media"
+
+apify:
+  token: "${APIFY_TOKEN}"
