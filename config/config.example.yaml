@@ -149,3 +149,11 @@ media:
 
 apify:
   token: "${APIFY_TOKEN}"
+
+clone:
+  gemini_api_key: "${GEMINI_API_KEY}"
+  model: "gemini-3.1-flash-lite-preview"
+  image_model: "gemini-3.1-flash-image-preview"
+  brand_name: "Doughnut"
+  brand_description: "Hong Kong backpack brand (est. 2010). Functional, stylish bags for urban commuters and travelers."
+  max_briefs_per_source: 3
