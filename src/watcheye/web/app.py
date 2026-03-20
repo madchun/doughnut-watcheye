@@ -57,6 +57,31 @@ def _seed_if_empty():
 _seed_if_empty()
 
 st.set_page_config(page_title="Watcheye — Doughnut Content Monitor", layout="wide")
+
+# --- Password Protection ---
+def _check_password() -> bool:
+    """Gate access with a password stored in st.secrets['APP_PASSWORD']."""
+    try:
+        correct_pw = st.secrets["APP_PASSWORD"]
+    except (KeyError, Exception):
+        return True  # No password configured — allow access (local dev)
+
+    if st.session_state.get("authenticated"):
+        return True
+
+    st.title("🔒 Watcheye — Login Required")
+    pw = st.text_input("Password", type="password", key="login_pw")
+    if st.button("Login", type="primary"):
+        if pw == correct_pw:
+            st.session_state["authenticated"] = True
+            st.rerun()
+        else:
+            st.error("Incorrect password.")
+    return False
+
+if not _check_password():
+    st.stop()
+
 st.title("🔍 Watcheye — Social Media Content Monitor")
 
 
