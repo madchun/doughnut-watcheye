@@ -1,8 +1,7 @@
-"""Streamlit Cloud entry point — imports and runs the main app."""
+"""Streamlit Cloud entry point — runs the main app module."""
 
-import importlib
+import runpy
 
-# The watcheye package is installed via `requirements.txt` (`.` entry)
-# so we can import the app module directly. Streamlit executes this file
-# as its main script; importing the module runs all top-level Streamlit calls.
-import watcheye.web.app  # noqa: F401
+# Use runpy to execute the app module as a script on every Streamlit rerun.
+# A plain `import` would only execute once and break Streamlit's rerun model.
+runpy.run_module("watcheye.web.app", run_name="__main__")

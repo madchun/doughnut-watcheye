@@ -19,10 +19,12 @@ from watcheye.storage.models import Brand, ContentBrief, ContentItem, ContentTag
 
 # --- Init ---
 # On Streamlit Cloud, inject secrets as env vars so config resolver picks them up
-if hasattr(st, "secrets"):
+try:
     for key in ("APIFY_TOKEN", "GEMINI_API_KEY"):
         if key in st.secrets and key not in os.environ:
             os.environ[key] = st.secrets[key]
+except Exception:
+    pass  # No secrets configured — running without API keys
 
 config_path = os.environ.get("WATCHEYE_CONFIG", "config/config.yaml")
 cfg = load_config(config_path)
